@@ -617,7 +617,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a href="page-login.html">
+                                <a href="/login">
                                     <span class="text">Login</span>
                                 </a>
                             </li>
@@ -627,7 +627,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a href="page-register.html">
+                                <a href="/register">
                                     <span class="text">Register</span>
                                 </a>
                             </li>

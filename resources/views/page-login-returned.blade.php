@@ -108,7 +108,7 @@
                         <a class="btn btn-default btn-block" href="javascript:void(0);">Link another account</a></span>
 
                         <hr><!-- horizontal line -->
-                        <p class="text-muted text-center">Don't have any account? <a class="semibold" href="page-register.html">Sign up to get started</a></p>
+                        <p class="text-muted text-center">Don't have any account? <a class="semibold" href="/register">Sign up to get started</a></p>
                     </div>
                 </div>
                 <!--/ END row -->

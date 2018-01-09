@@ -56,12 +56,13 @@
                         <!--/ Brand -->
 
                         <!-- Register form -->
-                        <form class="panel" name="form-register" action="">
+                        <form class="panel" name="form-register" action="/register" method="post">
+                        	{{csrf_field()}}
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label class="control-label">Username</label>
                                     <div class="has-icon pull-left">
-                                        <input type="text" class="form-control" name="username" data-parsley-required>
+                                        <input type="text" class="form-control" name="name" data-parsley-required>
                                         <i class="ico-user2 form-control-icon"></i>
                                     </div>
                                 </div>
@@ -91,15 +92,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="checkbox custom-checkbox">  
-                                        <input type="checkbox" name="agree" id="agree" value="1">  
-                                        <label for="agree">&nbsp;&nbsp;I agree to the <a class="semibold" href="javascript:void(0);">Term Of Services</a></label>   
+                                    <div class="checkbox custom-checkbox">
+                                        <input type="checkbox" name="agree" id="agree" value="1">
+                                        <label for="agree">&nbsp;&nbsp;I agree to the <a class="semibold" href="javascript:void(0);">Term Of Services</a></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="checkbox custom-checkbox">  
-                                        <input type="checkbox" name="news" id="news" value="1">  
-                                        <label for="news">&nbsp;&nbsp;Send me Newsletters.</label>   
+                                    <div class="checkbox custom-checkbox">
+                                        <input type="checkbox" name="news" id="news" value="1">
+                                        <label for="news">&nbsp;&nbsp;Send me Newsletters.</label>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +113,7 @@
                         <hr><!-- horizontal line -->
 
                         <p class="text-center">
-                            <span class="text-muted">Already have an account? <a class="semibold" href="page-login.html">Sign in here</a></span>
+                            <span class="text-muted">Already have an account? <a class="semibold" href="/login">Sign in here</a></span>
                         </p>
                     </div>
                 </div>
@@ -132,6 +133,7 @@
         <!-- Plugins and page level script : optional -->
         <script type="text/javascript" src="/js/pace.min.js"></script>
 		<script type="text/javascript" src="/plugins/parsley/js/parsley.js"></script>
+		<script type="text/javascript" src="/plugins/nprogress/nprogress.js"></script>
         <script type="text/javascript" src="/js/backend/pages/register.js"></script>
         <!--/ Plugins and page level script : optional -->
         <!--/ END JAVASCRIPT SECTION -->
