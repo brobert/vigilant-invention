@@ -20,14 +20,18 @@
     $(function () {
         // Register form function
         // ================================
-        var $form   = $('form[name=form-register]'),
-        $btn    	= $form.find('button[type="submit"]'),
-        data    	= $form.serialize(),
-        type    	= $form.attr('method'),
-        url     	= $form.attr('action');
-
+        var $form   = $('form[name=form-register]');
+        debugger;
         // On button submit click
         $form.on('click', 'button[type=submit]', function (e) {
+            debugger;
+            $form = $('form[name=form-register]');
+            var $btn  = $form.find('button[type="submit"]'),
+                data  = $form.serialize(),
+                type  = $form.attr('method'),
+                url   = $form.attr('action')
+            ;
+            
             var $this = $(this);
 
             // Run parsley validation
@@ -44,13 +48,14 @@
                     dataType: 'json',
                     data: data
                 });
+
                 // clear all password fields after sending request
-//                ladda = Ladda.create($btn[0]).start();
                 $form.find('input[type="password"]').val('');
 
                 jxhr.done(function (data) {
-//                    ladda.stop();
+
                     NProgress.done();
+                    $this.prop('disabled', false);
 
                     var bsalert = '';
                         bsalert += '<div class="alert alert-success animation animating flipInX">';
@@ -58,13 +63,14 @@
                         bsalert += '<h4 class="semibold mb5">Success!</h4>';
                         bsalert += '<p class="nm">'+data.text+'</p>';
                         bsalert += '</div>';
-
+                    console.info(bsalert);
                     $form.find('.message-container.global').html(bsalert);
                 });
 
                 jxhr.fail(function (data) {
-                    
-//                    ladda.stop();
+
+                    console.info('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', data.responseJSON);
+                    $this.prop('disabled', false);
                     NProgress.done();
 
                     var bsalert = '', 
@@ -96,7 +102,7 @@
                     
                     Object.keys( data.responseJSON ).forEach(
                         (key) => {
-                            console.info( data.responseJSON[key]);
+                            console.info( '>>>>>>>>>>>>>>>>>>>..', data.responseJSON[key]);
                             let fieldAlert = '';
                             fieldAlert += '<div class="notif text-danger animation animating fadeIn">';
                             fieldAlert += '<p class="nm">'+data.responseJSON[key].join(' ')+'</p>';

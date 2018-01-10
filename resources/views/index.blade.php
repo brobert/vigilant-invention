@@ -88,7 +88,7 @@
 								<li><a href="#">Third item</a></li>
 							</ul>
 					</li>
-					
+
                 </ul>
                 <!--/ END Left nav -->
 
@@ -120,7 +120,7 @@
                                 <span class="option text-right"><a href="javascript:void(0);">Clear all</a></span>
                             </div>
                             <div class="dropdown-body slimscroll">
-                                
+
 								<!-- Message list -->
                                 <div class="media-list">
                                     <a href="javascript:void(0);" class="media read border-dotted">
@@ -134,7 +134,7 @@
                                             <!--/ meta icon -->
                                         </span>
                                     </a>
-									
+
 									<a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
                                             <img src="/image/avatar/avatar1.jpg" class="media-object img-circle" alt="">
@@ -173,7 +173,7 @@
                                             <!--/ meta icon -->
                                         </span>
                                     </a>
-									
+
 									<a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
                                             <img src="/image/avatar/avatar9.jpg" class="media-object img-circle" alt="">
@@ -199,7 +199,7 @@
                                             <!--/ meta icon -->
                                         </span>
                                     </a>
-									
+
 									<a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
                                             <img src="/image/avatar/avatar5.jpg" class="media-object img-circle" alt="">
@@ -212,7 +212,7 @@
                                             <!--/ meta icon -->
                                         </span>
                                     </a>
-									
+
 									<a href="page-message-rich.html" class="media border-dotted read">
                                         <span class="pull-left">
                                             <img src="/image/avatar/avatar3.jpg" class="media-object img-circle" alt="">
@@ -233,7 +233,7 @@
                         <!--/ Dropdown menu -->
                     </li>
                     <!--/ Notification dropdown -->
-					
+
                     <!-- Profile dropdown -->
                     <li class="dropdown profile">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
@@ -248,6 +248,17 @@
                             <li><a href="javascript:void(0);"><span class="icon"><i class="ico-question"></i></span> Help</a></li>
                             <li class="divider"></li>
                             <li><a href="javascript:void(0);"><span class="icon"><i class="ico-exit"></i></span> Sign Out</a></li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
                         </ul>
                     </li>
                     <!-- Profile dropdown -->
@@ -260,7 +271,7 @@
                         </a>
                     </li>
                     <!--/ Offcanvas right -->
-                  
+
                 </ul>
                 <!--/ END Right nav -->
             </div>
@@ -632,7 +643,7 @@
                                     <span class="text">Timeline</span>
                                 </a>
                             </li>
-                           
+
                         </ul>
                         <!--/ END 2nd Level Menu -->
                     </li>
@@ -1126,7 +1137,7 @@
             <!--/ END Offcanvas -->
         </aside>
         <!--/ END Template Sidebar (right) -->
-		
+
         <!-- START Template Main -->
         <section id="main" role="main">
             <!-- START Template Container -->
@@ -1138,11 +1149,11 @@
                     </div>
                 </div>
                 <!-- Page Header -->
-				
+
 				<div class="row">
                     <!-- START Left Side -->
                     <div class="col-md-9">
-                        
+
                         <!-- Website States -->
                         <div class="row">
                             <div class="col-sm-12">
@@ -1289,7 +1300,7 @@
                     <!-- START Right Side -->
                     <div class="col-md-3">
                         <div class="panel panel-minimal">
-						
+
 							<div class="panel">
                                 <div class="panel-body">
                                     <h4 class="semibold nm"><i class="ico-dollar mr5"></i>Today Income</h4>
@@ -1299,7 +1310,7 @@
                                     <!--/ chart -->
                                 </div>
                             </div>
-                            
+
 							<div class="widget panel bgcolor-warning">
                             <!-- panel body -->
                             <div class="panel-body">
@@ -1327,7 +1338,7 @@
                             </div>
                             <!--/ panel body -->
                         </div>
-							
+
 						<div class="panel panel-default">
                             <div class="panel-heading">
                                 <h5 class="panel-title"><i class="ico-globe mr5"></i>Traffic</h5>
@@ -1348,7 +1359,7 @@
                                 </li>
                             </ul>
                         </div>
-							
+
 						</div>
                     </div>
                     <!--/ END Right Side -->

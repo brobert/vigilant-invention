@@ -1,19 +1,18 @@
 <?php
-
 return [
 
     /*
-    |--------------------------------------------------------------------------
-    | Application Name
-    |--------------------------------------------------------------------------
-    |
-    | This value is the name of your application. This value is used when the
-    | framework needs to place the application's name in a notification or
-    | any other location as required by the application or its packages.
-    |
-    */
+     * |--------------------------------------------------------------------------
+     * | Application Name
+     * |--------------------------------------------------------------------------
+     * |
+     * | This value is the name of your application. This value is used when the
+     * | framework needs to place the application's name in a notification or
+     * | any other location as required by the application or its packages.
+     * |
+     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env ( 'APP_NAME', 'Laravel' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +25,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env ( 'APP_ENV', 'production' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +38,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env ( 'APP_DEBUG', false ),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env ( 'APP_URL', 'http://localhost' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pl',
 
     /*
     |--------------------------------------------------------------------------
@@ -104,7 +103,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env ( 'APP_KEY' ),
 
     'cipher' => 'AES-256-CBC',
 
@@ -121,9 +120,9 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env ( 'APP_LOG', 'daily' ),
 
-    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+    'log_level' => env ( 'APP_LOG_LEVEL', 'debug' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -175,7 +174,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        App\Providers\RouteServiceProvider::class
 
     ],
 
@@ -224,8 +223,8 @@ return [
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class,
+        'View' => Illuminate\Support\Facades\View::class
 
-    ],
+    ]
 
 ];

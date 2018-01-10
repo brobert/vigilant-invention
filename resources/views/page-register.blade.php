@@ -62,21 +62,33 @@
                                 <div class="form-group">
                                     <label class="control-label">Username</label>
                                     <div class="has-icon pull-left">
-                                        <input type="text" class="form-control" name="name" data-parsley-required>
+                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus data-parsley-required>
                                         <i class="ico-user2 form-control-icon"></i>
+                                        @if ($errors->has('name'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label class="control-label">Password</label>
                                     <div class="has-icon pull-left">
                                         <input type="password" class="form-control" name="password" data-parsley-required>
                                         <i class="ico-key2 form-control-icon"></i>
+                                        @if ($errors->has('password'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label class="control-label">Retype Password</label>
                                     <div class="has-icon pull-left">
-                                        <input type="password" class="form-control" name="retype-password" data-parsley-equalto="input[name=password]">
+                                        <input type="password" class="form-control" name="password_confirmation" data-parsley-equalto="input[name=password]">
                                         <i class="ico-asterisk form-control-icon"></i>
                                     </div>
                                 </div>
@@ -89,6 +101,11 @@
                                     <div class="has-icon pull-left">
                                         <input type="email" class="form-control" name="email" placeholder="you@mail.com">
                                         <i class="ico-envelop form-control-icon"></i>
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -132,8 +149,9 @@
 
         <!-- Plugins and page level script : optional -->
         <script type="text/javascript" src="/js/pace.min.js"></script>
-		<script type="text/javascript" src="/plugins/parsley/js/parsley.js"></script>
-		<script type="text/javascript" src="/plugins/nprogress/nprogress.js"></script>
+        <script type="text/javascript" src="/plugins/parsley/js/parsley.js"></script>
+        <script type="text/javascript" src="/plugins/ladda/js/ladda.js"></script>
+        <script type="text/javascript" src="/plugins/nprogress/nprogress.js"></script>
         <script type="text/javascript" src="/js/backend/pages/register.js"></script>
         <!--/ Plugins and page level script : optional -->
         <!--/ END JAVASCRIPT SECTION -->
