@@ -122,6 +122,9 @@
                                 </div>
                             </div>
                             <div class="panel-footer">
+
+                                <div class="col-md-12 message-container"></div>
+
                                 <button type="submit" class="btn btn-block btn-success"><span class="semibold">Sign up</span></button>
                             </div>
                         </form>

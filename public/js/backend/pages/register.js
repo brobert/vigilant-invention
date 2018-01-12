@@ -64,12 +64,10 @@
                         bsalert += '<p class="nm">'+data.text+'</p>';
                         bsalert += '</div>';
                     console.info(bsalert);
-                    $form.find('.message-container.global').html(bsalert);
+                    $form.find('.message-container').html(bsalert);
                 });
 
                 jxhr.fail(function (data) {
-
-                    console.info('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', data.responseJSON);
                     $this.prop('disabled', false);
                     NProgress.done();
 
@@ -100,14 +98,15 @@
                     // append to affected form
                     $form.find('.message-container.global').html(bsalert);
                     
-                    Object.keys( data.responseJSON ).forEach(
+                    Object.keys( data.responseJSON.errors ).forEach(
                         (key) => {
-                            console.info( '>>>>>>>>>>>>>>>>>>>..', data.responseJSON[key]);
+                            console.info( '>>>>>>>>>>>>>>>>>>>..', data.responseJSON.errors );
                             let fieldAlert = '';
                             fieldAlert += '<div class="notif text-danger animation animating fadeIn">';
-                            fieldAlert += '<p class="nm">'+data.responseJSON[key].join(' ')+'</p>';
+                            fieldAlert += '<p class="nm">'+data.responseJSON.errors[key].join(' ')+'</p>';
                             fieldAlert += '</div>';
-                            $form.find(`.message-container.field[name="${key}"]`).html(fieldAlert);
+                            console.info('ERROR', data.responseJSON.errors[key].join(' '))
+                            $form.find('.message-container').html(fieldAlert);
                         }
                     );
                 });
