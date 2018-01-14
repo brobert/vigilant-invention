@@ -38,4 +38,9 @@ class LoginController extends Controller
         $this->middleware ( 'guest' )
             ->except ( 'logout' );
     }
+
+    protected function getFailedLoginMesssage()
+    {
+        return 'Spadaj na bambus';
+    }
 }

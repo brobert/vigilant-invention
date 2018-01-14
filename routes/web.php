@@ -155,9 +155,6 @@ Route::get ( '/page-invoice.html', function () {
 Route::get ( '/page-invoice-printable.html', function () {
     return view ( 'page-invoice-printable' );
 } );
-Route::get ( '/login', function () {
-    return view ( 'page-login' );
-} );
 Route::get ( '/page-login-returned.html', function () {
     return view ( 'page-login-returned' );
 } );
@@ -176,9 +173,9 @@ Route::get ( '/page-message-rich.html', function () {
 Route::get ( '/page-profile.html', function () {
     return view ( 'page-profile' );
 } );
-Route::get ( '/register', function () {
-    return view ( 'page-register' );
-} );
+// Route::get ( '/register', function () {
+//     return view ( 'page-register' );
+// } );
 Route::get ( '/page-starter.html', function () {
     return view ( 'page-starter' );
 } );

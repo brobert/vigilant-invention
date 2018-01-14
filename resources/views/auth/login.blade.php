@@ -1,69 +1,92 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+<!-- START Template Main -->
+<section id="main" role="main">
+    <!-- START Template Container -->
+    <section class="container">
+        <!-- START row -->
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <!-- Brand -->
+                <div class="text-center" style="margin-bottom:40px;">
+                    <span class="logo-figure inverse"></span>
+                    <span class="logo-text inverse"></span>
+                    <h5 class="semibold text-muted mt-5">@lang('auth.login.title')</h5>
+                </div>
+                <!--/ Brand -->
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+                <!-- Social button -->
+                @if(0)
+                <ul class="list-table">
+                    <li><button type="button" class="btn btn-block btn-facebook">Connect with <i class="ico-facebook2 ml5"></i></button></li>
+                    <li><button type="button" class="btn btn-block btn-twitter">Connect with <i class="ico-twitter2 ml5"></i></button></li>
+                </ul>
+                <!-- Social button -->
+                @endif
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                <hr><!-- horizontal line -->
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                <!-- Login form -->
+                <form class="panel auth-form" name="form-login" action="/login" method="post">
+                {{csrf_field()}}
+                    <div class="panel-body">
+                    @if(0)
+                        <div class="form-group">
+                            <select class="form-control" name="lang">
+                                <option value="0">Select language</option>
+                                <option value="en">English</option>
+                                <option value="da">Danish - Dansk</option>
+                                <option value="nl">Dutch - Nederlands</option>
+                                <option value="en-gb">English - UK</option>
+                                <option value="fr">French - français</option>
+                                <option value="de">German - Deutsch</option>
+                            </select>
+                        </div>
+                    @endif
+                        <div class="form-group">
+                            <div class="form-stack has-icon pull-left">
+                                <input name="email" type="text" class="form-control input-lg" placeholder="@lang('auth.login.field.email')" data-parsley-errors-container="#error-container" data-parsley-error-message="@lang('auth.login.error.field.email')" data-parsley-required>
+                                <i class="ico-user2 form-control-icon"></i>
+                            </div>
+                            <div class="form-stack has-icon pull-left">
+                                <input name="password" type="password" class="form-control input-lg" placeholder="@lang('auth.login.field.password')" data-parsley-errors-container="#error-container" data-parsley-error-message="@lang('auth.login.error.field.password')" data-parsley-required>
+                                <i class="ico-lock2 form-control-icon"></i>
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        <!-- Error container -->
+                        <div id="error-container"class="mb15"></div>
+                        <!--/ Error container -->
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="checkbox custom-checkbox">
+                                        <input type="checkbox" name="remember" id="remember" value="1">
+                                        <label for="remember">&nbsp;&nbsp;@lang('auth.login.error.field.remember')</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <a href="javascript:void(0);">@lang('auth.login.lost-password')</a>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
+                        <div class="form-group nm">
+                            <button type="submit" class="btn btn-block btn-success"><span class="semibold">@lang('auth.login.login_button')</span></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
+                <!-- Login form -->
+
+                <hr><!-- horizontal line -->
+
+                <p class="text-muted text-center">@lang('auth.login.no_account') <a class="semibold" href="/register">@lang('auth.login.go_to_register')</a></p>
             </div>
         </div>
-    </div>
-</div>
+        <!--/ END row -->
+    </section>
+    <!--/ END Template Container -->
+</section>
+<!--/ END Template Main -->
 @endsection

@@ -20,12 +20,11 @@
     $(function () {
         // Register form function
         // ================================
-        var $form   = $('form[name=form-register]');
-        debugger;
+        var $form   = $('form.auth-form');
         // On button submit click
         $form.on('click', 'button[type=submit]', function (e) {
+            $form = $('form.auth-form');
             debugger;
-            $form = $('form[name=form-register]');
             var $btn  = $form.find('button[type="submit"]'),
                 data  = $form.serialize(),
                 type  = $form.attr('method'),
@@ -65,6 +64,7 @@
                         bsalert += '</div>';
                     console.info(bsalert);
                     $form.find('.message-container').html(bsalert);
+                    
                 });
 
                 jxhr.fail(function (data) {
@@ -100,7 +100,6 @@
                     
                     Object.keys( data.responseJSON.errors ).forEach(
                         (key) => {
-                            console.info( '>>>>>>>>>>>>>>>>>>>..', data.responseJSON.errors );
                             let fieldAlert = '';
                             fieldAlert += '<div class="notif text-danger animation animating fadeIn">';
                             fieldAlert += '<p class="nm">'+data.responseJSON.errors[key].join(' ')+'</p>';
